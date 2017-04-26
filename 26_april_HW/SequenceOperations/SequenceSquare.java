@@ -13,7 +13,8 @@ public class SequenceSquare extends RandomSequence {
 
     @Override
     public double getNext() {
-        return sequence.getNext() * sequence.getNext();
+    	double nextVal = sequence.getNext();
+        return nextVal * nextVal;
     }
 
 }
