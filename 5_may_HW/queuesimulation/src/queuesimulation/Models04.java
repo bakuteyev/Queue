@@ -216,7 +216,7 @@ public class Models04 {
         double lambda = 1.1;
 
         QueueStatistics res;
-        double srv = 0.83;
+        double srv = 0.84;
         // При srv = 2 вероятность того, что все приборы свободны равна0.0140 => нужно уменьшать srv
         // при шаге srv -= 0.01 получили вероятность 0.30273342428391126 при srv=0.819999999999999
         // стартуем с srv=0.83 с шагом srv -= 0.00001;
@@ -228,7 +228,7 @@ public class Models04 {
             Waiting queue = new Waiting();
             queue.capacity = waitingRoomSize;
             res = taskNunits(n, nu, income, queue);
-            srv -= 0.00001;
+            srv -= 0.001;
         } while (res.unitsFreeConditionProbability[nu] < 0.3);
         System.out.println("------------------------------------"
                 + "\r\n число обращений: " + n
